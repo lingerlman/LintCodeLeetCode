@@ -8,14 +8,14 @@ class Solution {
 public:
     bool stringMatch(string a, string b) {
         if (b.size() > a.size())
-            return false;
+            return -1;
         size_t len_b = b.size();
         size_t len_a = a.size();
-        for (size_t i = 0; (i < len_a) && (i < (len_a - len_b + 1)); i++ ) {
+        for (size_t i = 0; i < len_a - len_b + 1; ++i ) {  //no need for i < len_a and access empty string
             if (a.substr(i, len_b) == b)
-                return true;
+                return i;
         }
-        return false;    
+        return -1;    
     }
     
 }; 
