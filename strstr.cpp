@@ -19,12 +19,9 @@ public:
         const string a(source);
         const string b(target);
         
-        if (b.size() > a.size())
-            return -1;
-
         size_t len_b = b.size();
         size_t len_a = a.size();
-        for (size_t i = 0; i < len_a - len_b + 1; ++i ) {
+        for (size_t i = 0; i < len_a - len_b + 1; ++i ) {   //include length comparison and zero case.
             if (a.substr(i, len_b) == b)
                 return i;
         }
@@ -34,8 +31,8 @@ public:
 
 int main()
 {
-  char *a = "abc";
-  char *b = "ab";
+  char a[] = "abc";
+  char b[] = "ab";
   Solution s;
   cout << s.strStr(a, b) << endl;
 }
