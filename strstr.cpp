@@ -35,7 +35,7 @@ public:
 int main()
 {
   char *a = "abc";
-  char b[10] = "ab";
+  char *b = "ab";
   Solution s;
   cout << s.strStr(a, b) << endl;
 }
